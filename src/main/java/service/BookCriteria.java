@@ -1,5 +1,7 @@
 package service;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.util.Date;
 
 public class BookCriteria {
@@ -75,5 +77,9 @@ public class BookCriteria {
 
     public void setEndDatePublication(Date endDatePublication) {
         this.endDatePublication = endDatePublication;
+    }
+
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }
