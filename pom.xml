@@ -7,10 +7,26 @@
     <groupId>org.jahia</groupId>
     <artifactId>book-storage</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <jUnit.version>4.12</jUnit.version>
         <hibernate.version>5.4.3.final</hibernate.version>
+        <h2.version>1.4.199</h2.version>
+        <dbUnit.version>2.6.0</dbUnit.version>
+        <slf4j.version>1.7.26</slf4j.version>
+        <log4j.version>1.7.26</log4j.version>
     </properties>
 
     <dependencies>
@@ -25,6 +41,27 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <scope>test</scope>
+            <version>${dbUnit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
     </dependencies>
 </project>

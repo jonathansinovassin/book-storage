@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <BOOK id='1' title="Premier livre" author='Jonathan' price='12.5' summary='La trilogie - volet 1' date_of_publication='2015-08-20' />
+    <BOOK id='2' title="Deuxième livre" author='Jonathan' price='8' summary='La trilogie - volet 2' date_of_publication='2016-08-12' />
+    <BOOK id='3' title="Troisième livre" author='Jonathan' price='9.54' summary='La trilogie - volet 3' date_of_publication='2017-08-12' />
+</dataset>
