@@ -1,6 +1,6 @@
 package data;
 
-import data.repository.model.Book;
+import data.model.Book;
 import org.dbunit.DBTestCase;
 import org.dbunit.PropertiesBasedJdbcDatabaseTester;
 import org.dbunit.dataset.IDataSet;
