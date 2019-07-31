@@ -3,9 +3,12 @@ package service.dto;
 import data.model.Book;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class BookDTO {
+public class BookDTO implements Serializable {
+
+    private static final long serialVersionUID = 3186984330429175736L;
 
     private Long id;
 

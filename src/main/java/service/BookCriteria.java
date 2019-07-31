@@ -2,12 +2,14 @@ package service;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class BookCriteria {
+public class BookCriteria implements Serializable {
 
-    public Boolean sortByAsc;
-    public String sortBy;
+    private static final long serialVersionUID = 6326267368520380132L;
+    private Boolean sortByAsc;
+    private String sortBy;
     private String title;
     private String author;
     private String summary;
