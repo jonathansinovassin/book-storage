@@ -2,7 +2,7 @@ package service;
 
 import com.google.common.base.Preconditions;
 import data.repository.BookRepository;
-import data.repository.Util.HibernateUtil;
+import data.Util.HibernateUtil;
 import data.repository.impl.BookRepositoryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
