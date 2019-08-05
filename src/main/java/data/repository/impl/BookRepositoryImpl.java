@@ -44,11 +44,17 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     public Long save(Book book) {
-        return (Long) session.save(book);
+        Transaction transaction = session.beginTransaction();
+        Long id = (Long) session.save(book);
+        transaction.commit();
+        return id;
     }
 
     public Book update(Book book) {
-        return (Book) session.merge(book);
+        Transaction transaction = session.beginTransaction();
+        Book bookUpdated = (Book) session.merge(book);
+        transaction.commit();
+        return bookUpdated;
     }
 
     public void delete(Long id) {
