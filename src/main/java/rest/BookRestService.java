@@ -12,10 +12,14 @@ import java.util.List;
 @Path("/book")
 public class BookRestService {
 
-    private BookService bookService = new BookService();
+    private BookService bookService;
 
     public BookRestService() {
-        bookService = new BookService();
+        bookService = new BookService(true);
+    }
+
+    public BookRestService(Boolean initSession) {
+        bookService = new BookService(false);
     }
 
     public void setBookService(BookService bookService) {

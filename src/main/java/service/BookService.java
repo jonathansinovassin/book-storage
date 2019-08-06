@@ -19,8 +19,9 @@ public class BookService {
 
     private Logger LOGGER = LoggerFactory.getLogger(BookService.class);
 
-    public BookService() {
-        bookRepository = new BookRepositoryImpl(HibernateUtil.getSessionFactory().openSession());
+    public BookService(Boolean initSession) {
+
+        bookRepository = initSession?new BookRepositoryImpl(HibernateUtil.getSessionFactory().openSession()):null;
     }
 
     public List<BookDTO> list(BookCriteria bookCriteria) {

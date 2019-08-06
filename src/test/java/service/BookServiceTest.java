@@ -25,7 +25,7 @@ public class BookServiceTest {
     private BookRepository bookRepository;
 
     @InjectMocks
-    private BookService bookService;
+    private BookService bookService = new BookService(false);
 
     @Before
     public void setUp() throws Exception {

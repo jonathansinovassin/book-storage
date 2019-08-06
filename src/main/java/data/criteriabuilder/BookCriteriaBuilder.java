@@ -57,7 +57,7 @@ public class BookCriteriaBuilder {
             predicatesSpecification.add(new PredicateSpecification<Book>() {
                 @Override
                 public Predicate toPredicate(Root<Book> root, CriteriaQuery criteriaQuery, CriteriaBuilder criteriaBuilder) {
-                    return criteriaBuilder.like(root.get("summary"), value);
+                    return criteriaBuilder.like(root.get("summary"), "%"+value+"%");
                 }
             });
         });
@@ -117,9 +117,13 @@ public class BookCriteriaBuilder {
         CriteriaQuery criteriaQuery = criteriaBuilder.createQuery(Book.class);
         Root<Book> root = criteriaQuery.from(Book.class);
         criteriaQuery.select(root);
+        List<Predicate> predicates = new ArrayList<Predicate>();
         predicatesSpecification.forEach((specification) -> {
-            criteriaQuery.where(specification.toPredicate(root, criteriaQuery, criteriaBuilder));
+            predicates.add(specification.toPredicate(root, criteriaQuery, criteriaBuilder));
         });
+        Predicate[] predicateArray = new Predicate[predicates.size()];
+        predicateArray = predicates.toArray(predicateArray);
+        criteriaQuery.where(predicateArray);
         return criteriaQuery;
     }
 }

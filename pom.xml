@@ -108,8 +108,5 @@
             <artifactId>postgresql</artifactId>
             <version>${postgres.version}</version>
         </dependency>
-
-
-
     </dependencies>
 </project>

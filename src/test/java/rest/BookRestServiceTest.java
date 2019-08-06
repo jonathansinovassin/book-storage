@@ -42,7 +42,7 @@ public class BookRestServiceTest {
     @Test
     public void testGet() throws Exception {
 
-        BookRestService bookRestService = new BookRestService();
+        BookRestService bookRestService = new BookRestService(false);
         bookRestService.setBookService(bookService);
         when(bookService.get(anyLong())).thenReturn(getMockBookDTO());
         dispatcher.getRegistry().addSingletonResource(bookRestService);
@@ -59,7 +59,7 @@ public class BookRestServiceTest {
     @Test
     public void testSave() throws Exception {
 
-        BookRestService bookRestService = new BookRestService();
+        BookRestService bookRestService = new BookRestService(false);
         bookRestService.setBookService(bookService);
         when(bookService.save(any(BookDTO.class))).thenReturn(1L);
         dispatcher.getRegistry().addSingletonResource(bookRestService);
@@ -81,7 +81,7 @@ public class BookRestServiceTest {
     @Test
     public void testList() throws Exception {
 
-        BookRestService bookRestService = new BookRestService();
+        BookRestService bookRestService = new BookRestService(false);
         bookRestService.setBookService(bookService);
         when(bookService.list(any(BookCriteria.class))).thenReturn(Collections.singletonList(getMockBookDTO()));
         dispatcher.getRegistry().addSingletonResource(bookRestService);
@@ -104,7 +104,7 @@ public class BookRestServiceTest {
     @Test
     public void testUpdate() throws Exception {
 
-        BookRestService bookRestService = new BookRestService();
+        BookRestService bookRestService = new BookRestService(false);
         bookRestService.setBookService(bookService);
         when(bookService.update(any(BookDTO.class))).thenReturn(getMockBookDTO());
         dispatcher.getRegistry().addSingletonResource(bookRestService);
@@ -126,7 +126,7 @@ public class BookRestServiceTest {
     @Test
     public void testDelete() throws Exception {
 
-        BookRestService bookRestService = new BookRestService();
+        BookRestService bookRestService = new BookRestService(false);
         bookRestService.setBookService(bookService);
         doNothing().when(bookService).delete(anyLong());
 

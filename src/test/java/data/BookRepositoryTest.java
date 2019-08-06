@@ -42,6 +42,34 @@ public class BookRepositoryTest extends HibernateDbUnitTestCase {
     }
 
     @Test
+    public void testListWithMultipleCriteriaNoResult() {
+        BookRepository bookRepository = new BookRepositoryImpl(session);
+
+        BookCriteria bookCriteria = new BookCriteria();
+        bookCriteria.setTitle("Premier livre");
+        bookCriteria.setPrice(8D);
+
+        List<Book> books = bookRepository.list(bookCriteria);
+
+        assertNotNull(books);
+        assertEquals(0, books.size());
+    }
+
+    @Test
+    public void testListWithMultipleCriteria() {
+        BookRepository bookRepository = new BookRepositoryImpl(session);
+
+        BookCriteria bookCriteria = new BookCriteria();
+        bookCriteria.setTitle("Premier livre");
+        bookCriteria.setPrice(12.5D);
+        bookCriteria.setSummary("volet 1");
+        List<Book> books = bookRepository.list(bookCriteria);
+
+        assertNotNull(books);
+        assertEquals(1, books.size());
+    }
+
+    @Test
     public void testListWithNotExistingTitleCriteria() {
         BookRepository bookRepository = new BookRepositoryImpl(session);
 
