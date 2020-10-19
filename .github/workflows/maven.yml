@@ -41,4 +41,4 @@ jobs:
         # Minimum 1 day. Maximum 90 days unless changed from the repository settings page.
 
         retention-days: 3
-    
+        run: mvn -B package --file pom.xml
