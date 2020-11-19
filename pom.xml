@@ -23,7 +23,7 @@
     </build>
 
     <properties>
-        <jUnit.version>4.12</jUnit.version>
+        <jUnit.version>4.13.1</jUnit.version>
         <hibernate.version>5.4.3.final</hibernate.version>
         <h2.version>1.4.199</h2.version>
         <dbUnit.version>2.6.0</dbUnit.version>
