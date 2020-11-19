@@ -2,7 +2,7 @@ name: Trigger Release creation
 
 on:
   release:
-    types: [published]
+    types: [prereleased]
 
 jobs:
   handle_release:
