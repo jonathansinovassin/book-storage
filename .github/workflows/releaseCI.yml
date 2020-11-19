@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Trigger release publishing
         env:
-          RELEASE_NAME: ${{ secrets.GITHUB_SHA }}
+          RELEASE_NAME: ${{ github.event.release.tag_name }}
           GITHUB_REF: ${{ secrets.GITHUB_REF }}
         run: |
           echo $RELEASE_NAME  and $GITHUB_REF.
