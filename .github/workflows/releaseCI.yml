@@ -1,0 +1,16 @@
+name: Trigger Release creation
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  handle_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger release publishing
+        env:
+          RELEASE_NAME: ${{ secrets.GITHUB_SHA }}
+          GITHUB_REF: ${{ secrets.GITHUB_REF }}
+        run: |
+          echo $RELEASE_NAME  and $GITHUB_REF.
