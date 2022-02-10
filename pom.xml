@@ -24,7 +24,7 @@
 
     <properties>
         <jUnit.version>4.13.1</jUnit.version>
-        <hibernate.version>5.4.3.final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <h2.version>1.4.199</h2.version>
         <dbUnit.version>2.6.0</dbUnit.version>
         <slf4j.version>1.7.26</slf4j.version>
