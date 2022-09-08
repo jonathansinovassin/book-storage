@@ -34,7 +34,7 @@
         <mockito.version>3.0.0</mockito.version>
         <resteasy.version>3.8.1.Final</resteasy.version>
         <javax.servlet.version>4.0.1</javax.servlet.version>
-        <postgres.version>42.2.6</postgres.version>
+        <postgres.version>42.4.1</postgres.version>
     </properties>
 
     <dependencies>
